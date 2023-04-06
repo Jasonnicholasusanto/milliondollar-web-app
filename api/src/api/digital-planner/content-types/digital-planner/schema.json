@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "digital_planners",
+  "info": {
+    "singularName": "digital-planner",
+    "pluralName": "digital-planners",
+    "displayName": "digitalPlanner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "oldPrice": {
+      "type": "decimal"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "branding": {
+      "type": "string"
+    },
+    "artist": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "Featured",
+        "Trending",
+        "Sale"
+      ]
+    },
+    "isNew": {
+      "type": "boolean"
+    },
+    "reviews": {
+      "type": "json"
+    },
+    "digital_planner_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::digital-planner-category.digital-planner-category",
+      "mappedBy": "digital_planners"
+    },
+    "digital_planner_subcategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::digital-planner-subcategory.digital-planner-subcategory",
+      "mappedBy": "digital_planners"
+    },
+    "fileFormat": {
+      "type": "enumeration",
+      "enum": [
+        "PDF",
+        "Doc"
+      ]
+    }
+  }
+}

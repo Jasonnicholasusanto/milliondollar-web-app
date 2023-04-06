@@ -4,6 +4,7 @@ import Contact from '../../components/Contact/Contact';
 import List from '../../components/List/List';
 import "./Products.scss";
 import useFetch from '../../hooks/useFetch';
+import PostersHeadline from '../../components/PostersHeadline/PostersHeadline';
 
 const Products = () => {
 
@@ -15,9 +16,10 @@ const Products = () => {
 
 
   const { data, loading, error } = useFetch(
-    `/sub-categories?filters[poster_materials][id][$eq]=${categoryId}`
+    // `/sub-categories?filters[poster_materials][id][$eq]=${categoryId}`
+    categoryId ? `/sub-categories?filters[poster_materials][id][$eq]=${categoryId}` : "/sub-categories"
   );
-
+  
   const handleChange = (e) => {
     const value = e.target.value;
     const isChecked = e.target.checked;
@@ -46,7 +48,6 @@ const Products = () => {
                 <label htmlFor={item.id}>{item.attributes.title}</label>
               </div>
             ))}
-
           </div>
 
           <div className="filterItem">
@@ -79,7 +80,7 @@ const Products = () => {
             alt=""
           /> */}
 
-          <h1>Classic Matte Paper Posters</h1>
+          <PostersHeadline id={categoryId}/>
 
           <List categoryId={categoryId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} />
         </div>

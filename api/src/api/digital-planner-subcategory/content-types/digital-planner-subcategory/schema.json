@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "digital_planner_subcategories",
+  "info": {
+    "singularName": "digital-planner-subcategory",
+    "pluralName": "digital-planner-subcategories",
+    "displayName": "digitalPlannerSubcategory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "digital_planners": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::digital-planner.digital-planner",
+      "inversedBy": "digital_planner_subcategories"
+    },
+    "digital_planner_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::digital-planner-category.digital-planner-category",
+      "inversedBy": "digital_planner_subcategories"
+    }
+  }
+}

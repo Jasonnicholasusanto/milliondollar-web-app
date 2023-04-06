@@ -70,6 +70,11 @@ const router = createBrowserRouter([
         path:"/posters/",
         element:<Posters/>,
       },
+      // Fetching all posters
+      {
+        path:"/posters/",
+        element:<Products/>,
+      },
       // Product page route
       {
         path:"/poster/:id",

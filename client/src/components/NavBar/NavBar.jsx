@@ -23,6 +23,7 @@ const NavBar = () => {
             <div className="right">
 
                 <div className="dropdownItem">
+<<<<<<< HEAD
                     <Link className='dropbtn' to="/digital-planners/">Digital Planners</Link>
 
                     <div class="dropdown-content">
@@ -31,6 +32,16 @@ const NavBar = () => {
                         <a href="/digital-planners/3">Yearly Planners</a>
                         <a href="/digital-planners/4">Habit Trackers</a>
                         <a href="/digital-planners/5">Others</a>
+=======
+                    <Link className='dropbtn' to="/posters/1">Digital Planners</Link>
+
+                    <div class="dropdown-content">
+                        <a href="#">Daily Planners</a>
+                        <a href="#">Monthly Planners</a>
+                        <a href="#">Yearly Planners</a>
+                        <a href="#">Habit Trackers</a>
+                        <a href="#">Others</a>
+>>>>>>> d5627487886e2259953dbec9ce62359088a3b05b
                     </div>
                 </div>
 
