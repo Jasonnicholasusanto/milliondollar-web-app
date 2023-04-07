@@ -59,6 +59,16 @@
             .createdBy{
                 font-size: 15px;
                 font-weight: bold;
+
+                .brandingLink{
+                    color: black;
+                    text-decoration: none;
+
+                    &:hover{
+                        color: rgb(110, 110, 110);
+                        transition: all 0.5s;
+                    }
+                }
             }
             
             .priceContainer{

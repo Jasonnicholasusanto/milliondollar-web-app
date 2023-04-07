@@ -73,7 +73,7 @@ const router = createBrowserRouter([
       // Fetching all posters
       {
         path:"/posters/",
-        element:<Products/>,
+        element:<Posters/>,
       },
       // Product page route
       {

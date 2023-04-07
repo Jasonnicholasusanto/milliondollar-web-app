@@ -36,7 +36,7 @@ const Footer2 = () => {
                     <h4>Shop</h4>
                     <ul>
                         <li><a href="/posters/">Posters</a></li>
-                        <li><a href="">Digital Planners</a></li>
+                        <li><a href="/digital-planners/">Digital Planners</a></li>
                         {/* <li><a href=""></a></li> */}
 
                     </ul>

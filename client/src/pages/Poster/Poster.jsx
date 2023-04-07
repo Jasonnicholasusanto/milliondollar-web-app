@@ -7,7 +7,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import Contact from "../../components/Contact/Contact.jsx";
 import Review from '../../components/Review/Review';
 import StraightenIcon from '@mui/icons-material/Straighten';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from '../../hooks/useFetch';
 
 import { createTheme } from '@mui/material/styles';
@@ -152,7 +152,12 @@ const Poster = () => {
 
             <div className="right">
               <h1>{data?.attributes?.title}</h1>
-              <span className='createdBy'>By {data?.attributes?.branding}</span>
+              <span className='createdBy'>
+                By&nbsp;
+                <Link className="brandingLink" to="/">
+                  {data?.attributes?.branding}
+                </Link>
+              </span>
 
               <div className="priceContainer">
                 {oldPrice !== price &&

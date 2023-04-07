@@ -10,13 +10,17 @@ const DPList = ({ subCats, maxPrice, sort, categoryId }) => {
     // )}&[filters][price][$lte]=${maxPrice}`
 
     let query = `/digital-planners?populate=*`;
+
+    console.log(subCats);
     
     if (categoryId) {
         query += `&[filters][digital_planner_categories][id]=${categoryId}${subCats.map(
             (item) => `&[filters][digital_planner_subcategories][id][$eq]=${item}`
         )}&[filters][price][$lte]=${maxPrice}`;
     } else {
-        query += `&[filters][price][$lte]=${maxPrice}`;
+        query += `&${categoryId}${subCats.map(
+            (item) => `&[filters][digital_planner_subcategories][id][$eq]=${item}`
+        )}&[filters][price][$lte]=${maxPrice}`;
     }
 
 

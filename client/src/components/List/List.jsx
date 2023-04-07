@@ -5,18 +5,18 @@ import useFetch from '../../hooks/useFetch';
 
 const List = ({ subCats, maxPrice, sort, categoryId }) => {
 
-    // let query = `/posters?populate=*&[filters][poster_materials][id]=${categoryId}${subCats.map(
-    //     (item) => `&[filters][sub_categories][id][$eq]=${item}`
-    // )}&[filters][price][$lte]=${maxPrice}`
-
     let query = `/posters?populate=*`;
+
+    console.log(subCats);
     
     if (categoryId) {
         query += `&[filters][poster_materials][id]=${categoryId}${subCats.map(
             (item) => `&[filters][sub_categories][id][$eq]=${item}`
         )}&[filters][price][$lte]=${maxPrice}`;
     } else {
-        query += `&[filters][price][$lte]=${maxPrice}`;
+        query += `&${categoryId}${subCats.map(
+            (item) => `&[filters][sub_categories][id][$eq]=${item}`
+        )}&[filters][price][$lte]=${maxPrice}`;
     }
 
 
