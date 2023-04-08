@@ -21,6 +21,7 @@ import Poster from "./pages/Poster/Poster";
 import Posters from "./pages/Posters/Posters";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 // Customizing the layout of the web page: Navigation bar and Footer stays the same
 // in all pages. However, we utilize Outlet from react-router-dom to change the web pages'
@@ -121,10 +122,10 @@ const router = createBrowserRouter([
         path:"/forgot-password/",
         element:<ForgotPassword/>,
       },
-      // {
-      //   path:"/reset-password/",
-      //   element:<ResetPassword/>,
-      // },
+      {
+        path:"/dashboard/:id",
+        element:<Dashboard/>,
+      },
       {
         path:"/cart/checkout/",
         element:<Checkout/>

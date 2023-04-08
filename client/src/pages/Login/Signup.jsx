@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -43,11 +44,7 @@ const theme = createTheme({
 
 export default function SignUp() {
 
-  // const { data, loading, error } = useFetchUsers(
-  //   "/users?populate=*"
-  // );
-
-  // console.log(data);
+  const navigate = useNavigate();
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -82,6 +79,8 @@ export default function SignUp() {
     setPassword('');
 
     setSubmitted(true);
+
+    navigate("/sign-in");
   };
 
   // Before posting the username to the back-end, we must also check if the username is available.
@@ -117,7 +116,7 @@ export default function SignUp() {
                 }}
             >
 
-                <img style={{width: "50px", marginBottom: "30px"}} src="favicon.ico" alt="logo"/>
+                <img style={{width: "50px", marginBottom: "30px"}} src="/img/$m-logo.png" alt="$M"/>
 
                 <Typography component="h1" variant="h5">
                     Sign up

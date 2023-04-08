@@ -22,6 +22,8 @@ export const postSignup = async (firstName, lastName, username, email, hashedPas
           },
         }).then(response => {
           // Handle success.
+
+          alert("Sign up successful! Thanks for joining us!");
           console.log('Well done!');
           console.log('User profile', response.data.user);
           console.log('User token', response.data.jwt);

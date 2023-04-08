@@ -34,7 +34,7 @@ const Posters = () => {
   return (
 
     <div className="productsContainer">
-      <div className="products">
+      <div className="posters">
         <div className="left">
 
           <div className="filterItem">

@@ -79,11 +79,6 @@ const NavBar = () => {
                     <div className="favouriteIcon">
                         <FavoriteBorderOutlinedIcon className='favIcon'/>
                     </div>
-                    
-                    {/* <div className="cartIcon" onClick={changeVisibility}>
-                        <ShoppingCartOutlinedIcon/>
-                        <span>0</span>
-                    </div> */}
 
                     <div className="cartIcon">
                         <Link className="link" to="/cart">

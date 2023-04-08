@@ -33,7 +33,7 @@ const DigitalPlanners = () => {
   return (
 
     <div className="productsContainer">
-      <div className="products">
+      <div className="digitalPlanners">
         <div className="left">
 
           <div className="filterItem">

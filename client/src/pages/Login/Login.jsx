@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Contact from '../../components/Contact/Contact';
 import './Login.scss';
+import { postSignIn } from '../../hooks/postSignin'; 
 
 function Copyright(props) {
   return (
@@ -43,13 +45,16 @@ const theme = createTheme({
 
 export default function SignIn() {
 
-  const handleSubmit = (event) => {
+    const [token, setToken] = useState(null);
+
+    const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    const email = data.get('email');
+    const password = data.get('password');
+
+    await postSignIn(email, password, setToken);
   };
 
   return (
@@ -81,11 +86,8 @@ export default function SignIn() {
                 alignItems: 'center',
                 }}
             >
-                {/* <Avatar sx={{ m: 1, bgcolor: 'black' }}>
-                    <LockOutlinedIcon />
-                </Avatar> */}
 
-                <img style={{width: "50px", marginBottom: "30px"}} src="favicon.ico" alt="logo"/>
+                <img style={{width: "50px", marginBottom: "30px"}} src="/img/$m-logo.png" alt="$M"/>
 
                 <Typography component="h1" variant="h5">
                     Sign in

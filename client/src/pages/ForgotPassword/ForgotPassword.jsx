@@ -83,7 +83,7 @@ export default function ForgotPassword() {
                     }}
                 >
            
-                    <img style={{width: "50px", marginBottom: "30px"}} src="favicon.ico" alt="logo"/>
+                    <img style={{width: "50px", marginBottom: "30px"}} src="/img/$m-logo.png" alt="$M"/>
 
                     <Typography component="h1" variant="h5">
                         Forgot Password?

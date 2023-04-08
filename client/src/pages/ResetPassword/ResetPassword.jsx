@@ -37,7 +37,7 @@ const theme = createTheme({
     },
 });
 
-export default function ResetPassword() {
+export default function ResetPassword({ code }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -79,9 +79,9 @@ export default function ResetPassword() {
                 }}
             >
 
-                <img style={{width: "50px", marginBottom: "30px"}} src="favicon.ico" alt="logo"/>
+                <img style={{width: "50px", marginBottom: "30px"}} src="/img/$m-logo.png" alt="$M"/>
 
-                <Typography component="h1" variant="h5">
+                <Typography sx={{fontFamily: "'Roboto Mono', monospace", fontWeight: "bold"}} component="h1" variant="h5">
                     Reset Password
                 </Typography>
 
@@ -131,18 +131,6 @@ export default function ResetPassword() {
                     Reset Password
                 </Button>
 
-                <Grid container>
-                    <Grid item xs>
-                    <Link href="/forgot-password" variant="body2">
-                        Forgot password?
-                    </Link>
-                    </Grid>
-                    <Grid item>
-                    <Link href="/sign-up" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                    </Link>
-                    </Grid>
-                </Grid>
                 <Copyright sx={{ mt: 5 }} />
                 </Box>
             </Box>
