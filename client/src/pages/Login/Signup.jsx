@@ -14,7 +14,7 @@ import Contact from '../../components/Contact/Contact';
 import './Signup.scss';
 import bcrypt from 'bcryptjs';
 import { postSignup } from '../../hooks/postSignup.js';
-import useFetch from '../../hooks/useFetch';
+import useFetchUsers from '../../hooks/useFetchUsers.js';
 
 function Copyright(props) {
   return (
@@ -44,12 +44,11 @@ const theme = createTheme({
 
 export default function SignUp() {
 
-  const { data, loading, error } = useFetch(
-    // "/users-permissions/roles"
-    `/posters?populate=*&`
-  );
+  // const { data, loading, error } = useFetchUsers(
+  //   "/users?populate=*"
+  // );
 
-  console.log(data);
+  // console.log(data);
 
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -97,7 +96,6 @@ export default function SignUp() {
 
   // Before posting the username to the back-end, we must also check if the username is available.
   // After a user signs up, we must verify their email address.
-  // Current problem is cannot fetch user roles.
 
   return (
     <div className="loginContainer">
@@ -136,6 +134,9 @@ export default function SignUp() {
                 <Typography component="h1" variant="h5">
                     Sign up
                 </Typography>
+                
+                <br/>
+                {submitted && <p style={{fontSize: "10px"}}>Thank you for joining us! Please verify your email.</p>}
 
                 <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                 <Grid container spacing={2}>
