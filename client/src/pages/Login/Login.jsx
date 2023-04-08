@@ -85,9 +85,8 @@ export default function SignIn() {
                     <LockOutlinedIcon />
                 </Avatar> */}
 
-                <h1>
-                    $M
-                </h1>
+                <img style={{width: "50px", marginBottom: "30px"}} src="favicon.ico" alt="logo"/>
+
                 <Typography component="h1" variant="h5">
                     Sign in
                 </Typography>
@@ -133,7 +132,7 @@ export default function SignIn() {
 
                 <Grid container>
                     <Grid item xs>
-                    <Link href="#" variant="body2">
+                    <Link href="/forgot-password" variant="body2">
                         Forgot password?
                     </Link>
                     </Grid>

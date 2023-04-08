@@ -14,7 +14,6 @@ import Contact from '../../components/Contact/Contact';
 import './Signup.scss';
 import bcrypt from 'bcryptjs';
 import { postSignup } from '../../hooks/postSignup.js';
-import useFetchUsers from '../../hooks/useFetchUsers.js';
 
 function Copyright(props) {
   return (
@@ -74,15 +73,6 @@ export default function SignUp() {
       consent = 'no';
     }
 
-    console.log({
-      firstName: data.get('firstName'),
-      lastName: data.get('lastName'),
-      username: data.get('username'),
-      email: data.get('email'),
-      password: hashedPassword,
-      updates: consent,
-    });
-
     await postSignup(firstName, lastName, username, email, password, consent);
 
     setFirstName('');
@@ -127,9 +117,7 @@ export default function SignUp() {
                 }}
             >
 
-                <h1>
-                    $M
-                </h1>
+                <img style={{width: "50px", marginBottom: "30px"}} src="favicon.ico" alt="logo"/>
 
                 <Typography component="h1" variant="h5">
                     Sign up

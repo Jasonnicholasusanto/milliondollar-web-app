@@ -19,6 +19,8 @@ import DigitalPlanners from "./pages/DigitalPlanners/DigitalPlanners";
 import DigitalPlanner from "./pages/DigitalPlanner/DigitalPlanner";
 import Poster from "./pages/Poster/Poster";
 import Posters from "./pages/Posters/Posters";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword/ResetPassword";
 
 // Customizing the layout of the web page: Navigation bar and Footer stays the same
 // in all pages. However, we utilize Outlet from react-router-dom to change the web pages'
@@ -30,6 +32,14 @@ const Layout = () => {
       <NavBar/>
       <Outlet/>
       <Footer2/>
+    </div>
+  )
+}
+
+const Reset = () => {
+  return (
+    <div className="resetPasswordPage">
+      <ResetPassword/>
     </div>
   )
 }
@@ -108,11 +118,24 @@ const router = createBrowserRouter([
         element:<SignUp/>,
       },
       {
+        path:"/forgot-password/",
+        element:<ForgotPassword/>,
+      },
+      // {
+      //   path:"/reset-password/",
+      //   element:<ResetPassword/>,
+      // },
+      {
         path:"/cart/checkout/",
         element:<Checkout/>
       }
     ]
   },
+
+  {
+    path:"/reset-password",
+    element:<ResetPassword/>,
+  }
 
 ])
 
