@@ -21,7 +21,8 @@ import Poster from "./pages/Poster/Poster";
 import Posters from "./pages/Posters/Posters";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
-import Dashboard from "./pages/Dashboard/Dashboard";
+import UserNavBar from "./user/UserNavBar/UserNavBar";
+import Homepage from "./user/Homepage/Homepage";
 
 // Customizing the layout of the web page: Navigation bar and Footer stays the same
 // in all pages. However, we utilize Outlet from react-router-dom to change the web pages'
@@ -29,8 +30,17 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 const Layout = () => {
   return (
     <div className="app">
-      {/* <LaunchingSoon/> */}
       <NavBar/>
+      <Outlet/>
+      <Footer2/>
+    </div>
+  )
+}
+
+const UserDashboard = () => {
+  return (
+    <div className="app">
+      <UserNavBar/>
       <Outlet/>
       <Footer2/>
     </div>
@@ -39,7 +49,7 @@ const Layout = () => {
 
 const Reset = () => {
   return (
-    <div className="resetPasswordPage">
+    <div className="app">
       <ResetPassword/>
     </div>
   )
@@ -123,19 +133,34 @@ const router = createBrowserRouter([
         element:<ForgotPassword/>,
       },
       {
-        path:"/dashboard/:id",
-        element:<Dashboard/>,
-      },
-      {
         path:"/cart/checkout/",
         element:<Checkout/>
-      }
+      },
     ]
   },
 
   {
     path:"/reset-password",
-    element:<ResetPassword/>,
+    element:<Reset/>,
+  },
+
+  {
+    path:"/dashboard/:id",
+    element:<UserDashboard/>,
+    children: [
+      {
+        path: "/dashboard/:id",
+        element: <Homepage/>
+      },
+      {
+        // path: "/sell-poster/"
+        // element: <SellPoster/>
+      },
+      {
+        // path: "/sell-digital-planner/"
+        // element: <SellDigitalPlanner/>
+      },
+    ]
   }
 
 ])

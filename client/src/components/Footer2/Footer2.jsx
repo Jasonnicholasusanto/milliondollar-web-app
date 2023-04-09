@@ -46,9 +46,11 @@ const Footer2 = () => {
                     <h4>Follow Us</h4>
                     
                     <div className="social-links">
-                        <a target="_blank" href="https://www.instagram.com/milliondollarposters/"><InstagramIcon/></a>
-                        <a href=""><FacebookIcon/></a>
-                        <a href=""><TwitterIcon/></a>
+                        <a className="instaIcon"target="_blank" href="https://www.instagram.com/milliondollarposters/">
+                            <InstagramIcon/>
+                        </a>
+                        <a className="fbIcon" href=""><FacebookIcon/></a>
+
                     </div>
                 </div>
             </div>
