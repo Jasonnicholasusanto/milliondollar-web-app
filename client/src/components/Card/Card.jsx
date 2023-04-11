@@ -30,19 +30,6 @@ const Card = ({ item }) => {
 
   }
 
-  const itemTag = () => {
-    var isNew = item?.attributes.isNew;
-    var tagging = item?.attributes.tag;
-
-    if(isNew){
-      return "New Release";
-    } else if (tagging !== "") {
-      return tagging;
-    } else {
-      return ""
-    }
-  }
-
   return (
     <NavLink className="link" to={`/poster/${item.id}`}>
         <div className="card">

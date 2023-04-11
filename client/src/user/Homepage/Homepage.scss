@@ -1,4 +1,13 @@
 .userHomepage{
-    height: 100vh;
-    width: 100%;
+    min-height: 100vh;
+
+    .profile{
+
+        .profileImg{
+            width: 100px;
+        }
+    }
+
+    .carousels{
+    }
 }

@@ -1,0 +1,40 @@
+.itemCarousel {
+    max-width: 100vw;
+    // margin-bottom: 200px;
+    // height: 500px;
+  
+    h1 {
+      font-weight: bold;
+    //   margin-bottom: 0px;
+    }
+  
+    .slider {
+      margin: 0 auto;
+      height: 100%;
+      width: 90%;
+  
+      .slick-slide > div {
+        // margin: 0 10px;
+      }
+      .slick-list {
+        // margin: 0 -10px;
+      }
+  
+      .slick-track {
+        float: left;
+        // margin-top: 15px;
+        // margin: 15px;
+      }
+  
+      .slick-prev::before,
+      .slick-prev::after {
+        color: #000000 !important;
+      }
+  
+      .slick-next::before,
+      .slick-next::after {
+        color: #000000 !important;
+      }
+    }
+}
+  
