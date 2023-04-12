@@ -23,6 +23,7 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword/ResetPassword";
 import UserNavBar from "./user/UserNavBar/UserNavBar";
 import Homepage from "./user/Homepage/Homepage";
+import Dashboard from "./user/Dashboard/Dashboard";
 
 // Customizing the layout of the web page: Navigation bar and Footer stays the same
 // in all pages. However, we utilize Outlet from react-router-dom to change the web pages'

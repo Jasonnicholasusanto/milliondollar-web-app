@@ -33,7 +33,12 @@ const ItemCarousel = ({ url, header }) => {
   };
 
   if (!data || data.length === 0) {
-    return <div className="itemCarousel">No items to display</div>;
+    return (
+      <div className="itemCarousel">
+        <h1>{header}</h1>
+        No items to display
+      </div>
+    );
   }
 
   function CustomPrevArrow(props) {
