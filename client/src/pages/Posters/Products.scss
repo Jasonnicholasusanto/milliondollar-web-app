@@ -1,0 +1,44 @@
+.products{
+    padding: 30px 50px;
+    display: flex;
+
+    .left{
+        flex: 1;
+
+        // Position sticky so the filters area will stay at the web page
+        // even when user scrolls down.
+        position: sticky; 
+        height: 100%;
+        top: 50px;
+
+        .filterItem{
+            margin-bottom: 30px;
+
+            h2{
+                font-weight: 400;
+                margin-bottom: 20px;
+            }
+
+            .inputItem{
+                margin-bottom: 10px;
+                align-items: center;
+                justify-content: center;
+
+                label{
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .right{
+        flex: 3;
+
+        .categoryImg{
+             width: 100%;
+             height: 300px;
+             object-fit: cover;
+             margin-bottom: 50px;
+        }
+    }
+}

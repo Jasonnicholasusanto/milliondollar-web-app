@@ -23,6 +23,7 @@
               height: 130px;
               object-fit: cover;
               background-color: white;
+              cursor: pointer;
             }
         
             .profile-name {
@@ -59,7 +60,7 @@
 
         .postersCarousel,
         .digitalPlannersCarousel {
-            margin-bottom: 50px;
+            // margin-bottom: 50px;
         }
     }
 }

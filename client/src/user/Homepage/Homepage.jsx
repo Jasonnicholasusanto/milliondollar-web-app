@@ -19,27 +19,6 @@ const Homepage = () => {
   return (
     <div className="userHomepage">
 
-      {/* <div className="profile">
-        {profileImg === null 
-          ? <img className='profileImg' src="/img/profile-user.png"/> 
-          : <img className='profileImg' src="" alt="Profile Image"/>}
-
-        <div className="profileInfo">
-          
-          <Link className="username" to="/">
-            <h1>Username</h1>
-          </Link>
-
-          <h3>
-            <span>First Name </span>
-            <span>Last Name</span>
-          </h3>
-
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae cumque magnam illo eveniet, delectus, velit ipsum rem incidunt cum atque aliquid deserunt id tenetur sint consequuntur voluptate laboriosam qui! Laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia adipisci, doloremque, eligendi ducimus consequuntur dolores provident nemo debitis temporibus consectetur tempore maiores magnam porro quos commodi facilis ipsa magni beatae.</p>
-        </div>
-        
-      </div> */}
-
       <div className="profile">
 
         <div class="profile-header">
