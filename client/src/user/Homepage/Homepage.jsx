@@ -12,9 +12,10 @@ const Homepage = () => {
   // );
 
   const [profileImg, setProfileImg] = useState(null);
-  const [username, setUsername] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [username, setUsername] = useState('Jasonnicholassusanto5602');
+  const [firstName, setFirstName] = useState('Jason');
+  const [lastName, setLastName] = useState('Susanto');
+  const [description, setDescription] = useState('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae tenetur blanditiis ipsum nesciunt esse, necessitatibus maxime quas quod praesentium laboriosam soluta repellendus vel, fuga tempora, porro dolor! Unde, quod velit!')
 
   return (
     <div className="userHomepage">
@@ -28,17 +29,15 @@ const Homepage = () => {
         </div>
 
         <div className="profileInfo">
-          <Link className="username" to="/">
-            <h1>JasonNicholasSusanto5602</h1>
-          </Link>
+          <h1>{username}</h1>
 
           <h3 className="name">
-            <span>Jason </span>
-            <span>Susanto</span>
+            <span>{firstName} </span>
+            <span>{lastName}</span>
           </h3>
 
           <p className="description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae tenetur blanditiis ipsum nesciunt esse, necessitatibus maxime quas quod praesentium laboriosam soluta repellendus vel, fuga tempora, porro dolor! Unde, quod velit!
+            {description}
           </p>
         </div>
 

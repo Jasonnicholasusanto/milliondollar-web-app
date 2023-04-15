@@ -24,6 +24,11 @@
               object-fit: cover;
               background-color: white;
               cursor: pointer;
+
+                &:hover{
+                    transition: 0.5s;
+                    transform: scale(1.1);
+                }
             }
         
             .profile-name {
@@ -37,16 +42,26 @@
         }
 
         .profileInfo{
-            margin: 30px 50px 70px 50px;
+            margin: 50px 50px 50px 50px;
             
-            .username{
-                font-size: 15px;
+            h1{
                 color: black;
                 text-decoration: none;
+
+                &:hover{
+                    transition: 0.5s;
+                    padding-left: 8px;
+                }
             }
 
             .name{
                 padding-top: 10px;
+                color: rgb(100, 100, 100);
+
+                &:hover{
+                    transition: 0.5s;
+                    padding-left: 8px;
+                }
             }
 
             .description{

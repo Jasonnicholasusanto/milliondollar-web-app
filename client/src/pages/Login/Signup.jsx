@@ -13,7 +13,6 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Contact from '../../components/Contact/Contact';
 import './Signup.scss';
-import bcrypt from 'bcryptjs';
 import { postSignup } from '../../hooks/postSignup.js';
 
 function Copyright(props) {
@@ -59,9 +58,7 @@ export default function SignUp() {
     
     const data = new FormData(event.currentTarget);
 
-    const saltRounds = 10;
     const password = data.get('password');
-    const hashedPassword = bcrypt.hashSync(password, saltRounds);
     let consent = '';
 
     if(updates){

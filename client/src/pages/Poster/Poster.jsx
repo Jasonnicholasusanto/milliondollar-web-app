@@ -154,7 +154,7 @@ const Poster = () => {
               <h1>{data?.attributes?.title}</h1>
               <span className='createdBy'>
                 By&nbsp;
-                <Link className="brandingLink" to="/">
+                <Link className="brandingLink" to="/dashboard/1">
                   {data?.attributes?.branding}
                 </Link>
               </span>

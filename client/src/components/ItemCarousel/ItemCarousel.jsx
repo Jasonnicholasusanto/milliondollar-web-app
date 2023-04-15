@@ -75,6 +75,10 @@ const ItemCarousel = ({ url, header }) => {
     <div className='itemCarousel'>
         <Link className="header" to="/">
           <h1>{header}</h1>
+
+          <div className="arrow">
+            <ArrowForwardIosIcon style={{fontSize: "18px", color: "black"}}/>
+          </div>
         </Link>
 
         <div className="slider">
