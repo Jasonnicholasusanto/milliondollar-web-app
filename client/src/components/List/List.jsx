@@ -6,8 +6,6 @@ import useFetch from '../../hooks/useFetch';
 const List = ({ subCats, maxPrice, sort, categoryId }) => {
 
     let query = `/posters?populate=*`;
-
-    console.log(subCats);
     
     if (categoryId) {
         query += `&[filters][poster_materials][id]=${categoryId}${subCats.map(

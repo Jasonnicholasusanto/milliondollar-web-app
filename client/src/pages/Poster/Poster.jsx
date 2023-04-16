@@ -29,6 +29,8 @@ const Poster = () => {
   const id = useParams().id;
   const { data, loading, error } = useFetch(`/posters/${id}?populate=*`);
 
+  // console.log(data)
+
   // To convert Date data type to String.
   Date.prototype.yyyymmdd = function() {
     var mm = this.getMonth() + 1; // getMonth() is zero-based

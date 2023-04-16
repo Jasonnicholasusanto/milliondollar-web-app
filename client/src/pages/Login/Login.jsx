@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,6 +15,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Contact from '../../components/Contact/Contact';
 import './Login.scss';
 import { postSignIn } from '../../hooks/postSignin'; 
+import { useNavigate } from 'react-router-dom';
+
 
 function Copyright(props) {
   return (
@@ -46,16 +47,24 @@ const theme = createTheme({
 export default function SignIn() {
 
     const [token, setToken] = useState(null);
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
 
-    const email = data.get('email');
-    const password = data.get('password');
+        const email = data.get('email');
+        const password = data.get('password');
 
-    await postSignIn(email, password, setToken);
-  };
+        await postSignIn(email, password, setToken, setUser);
+    };
+
+    useEffect(() => {
+        if (token !== null) {
+          navigate(`/dashboard/${user?.username}`);
+        }
+      }, [token]);
 
   return (
     <div className="loginContainer">

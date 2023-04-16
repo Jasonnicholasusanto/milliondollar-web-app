@@ -19,8 +19,6 @@ const ItemCarousel = ({ url, header }) => {
 
     const items = data;
 
-    console.log(items);
-
   if (!data || data.length === 0) {
     return (
       <div className="itemCarousel">
