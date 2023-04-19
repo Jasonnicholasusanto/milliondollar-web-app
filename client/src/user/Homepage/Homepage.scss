@@ -16,12 +16,12 @@
         
             .profile-image {
               position: absolute;
-              left: 50px;
-              bottom: -20px;
+              left: 70px;
+              bottom: -30px;
               border: 5px solid #fff;
               border-radius: 50%;
-              width: 130px;
-              height: 130px;
+              width: 150px;
+              height: 150px;
               object-fit: cover;
               background-color: white;
               cursor: pointer;
@@ -43,7 +43,7 @@
         }
 
         .profileInfo{
-            margin: 50px 50px 50px 50px;
+            margin: 50px 70px 50px 70px;
             
             h1{
                 color: black;
@@ -68,15 +68,12 @@
             .description{
                 font-size: 13px;
                 padding-top: 25px;
+                text-align: justify;
             }
         }
     }          
 
-    // .carousels {
-
-    //     .postersCarousel,
-    //     .digitalPlannersCarousel {
-    //         // margin-bottom: 50px;
-    //     }
-    // }
+    .carousels {
+        margin: 0px 20px 0px 20px;
+    }
 }

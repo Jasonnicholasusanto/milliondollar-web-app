@@ -5,10 +5,6 @@ import DPCard from '../DPCard/DPCard';
 
 const DPList = ({ subCats, maxPrice, sort, categoryId }) => {
 
-    // let query = `/posters?populate=*&[filters][poster_materials][id]=${categoryId}${subCats.map(
-    //     (item) => `&[filters][sub_categories][id][$eq]=${item}`
-    // )}&[filters][price][$lte]=${maxPrice}`
-
     let query = `/digital-planners?populate=*`;
 
     console.log(subCats);

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./DPCard.scss";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 
@@ -56,7 +56,9 @@ const DPCard = ({ item }) => {
 
 
 
-            {item?.attributes.branding === "" ? <h3>By {item?.attributes.artist}</h3> : <h3>By {item?.attributes.branding}</h3>}
+            {/* {item?.attributes.branding === "" ? <h3>By {item?.attributes.artist}</h3> : <h3>By {item?.attributes.branding}</h3>} */}
+
+            <h3>By {item?.attributes?.user?.data?.attributes?.username}</h3>
 
             <div className="rating">
                 <span className="star">

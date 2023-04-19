@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Contact from '../../components/Contact/Contact';
-import List from '../../components/List/List';
-import "./Posters.scss";
-import useFetch from '../../hooks/useFetch';
-import PostersHeadline from '../../components/PostersHeadline/PostersHeadline';
+import './UserPosters.scss';
+import useFetchUsers from '../../hooks/useFetchUsers';
+import UserList from '../../components/UserList/UserList';
 
-const Posters = () => {
+const UserPosters = () => {
 
   // categoryId includes our string object id due to the react-router-dom
-  const categoryId = parseInt(useParams().id);
   const { username } = useParams();
   const [maxPrice, setMaxPrice] = useState(500);
   const [sort, setSort] = useState(null);
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
-
-  const { data, loading, error } = useFetch(
-    // `/sub-categories?filters[poster_materials][id][$eq]=${categoryId}`
-    categoryId ? `/sub-categories?filters[poster_materials][id][$eq]=${categoryId}` : "/sub-categories"
+  const { data, loading, error } = useFetchUsers(
+    // categoryId ? `/sub-categories?filters[poster_materials][id][$eq]=${categoryId}` : "/sub-categories"
+    // `/posters?populate=*&[filters][user][id]=${username}`
+    `/users?populate=*&filters[username][$eq]=${username}`
   );
   
   const handleChange = (e) => {
@@ -38,7 +36,7 @@ const Posters = () => {
       <div className="posters">
         <div className="left">
 
-          <div className="filterItem">
+          {/* <div className="filterItem">
             <h2>Poster Categories</h2>
 
             {data?.map((item) => (
@@ -47,7 +45,7 @@ const Posters = () => {
                 <label htmlFor={item.id}>{item.attributes.title}</label>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="filterItem">
             <h2>Filter by price</h2>
@@ -79,9 +77,9 @@ const Posters = () => {
             alt=""
           /> */}
 
-          <PostersHeadline id={categoryId}/>
+          <h1>{data?.username}'s Posters</h1>
 
-          <List categoryId={categoryId} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} />
+          <UserList userData={data} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} />
         </div>
       </div>
 
@@ -90,4 +88,4 @@ const Posters = () => {
   )
 }
 
-export default Posters;
+export default UserPosters;

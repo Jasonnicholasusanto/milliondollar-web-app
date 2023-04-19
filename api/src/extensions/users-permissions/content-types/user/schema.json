@@ -101,6 +101,18 @@
     },
     "description": {
       "type": "text"
+    },
+    "digital_planners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::digital-planner.digital-planner",
+      "mappedBy": "user"
+    },
+    "posters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::poster.poster",
+      "mappedBy": "user"
     }
   }
 }

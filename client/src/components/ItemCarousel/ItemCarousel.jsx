@@ -11,7 +11,7 @@ import useFetch from '../../hooks/useFetch.js';
 import { Link } from 'react-router-dom';
 
 
-const ItemCarousel = ({ url, header }) => {
+const ItemCarousel = ({ url, username, header }) => {
 
     const { data, loading, error } = useFetch(
         url
@@ -22,10 +22,27 @@ const ItemCarousel = ({ url, header }) => {
   if (!data || data.length === 0) {
     return (
       <div className="itemCarousel">
-        <h1>{header}</h1>
-        No items to display
+          <h1>{header}</h1>
+
+          <div className="arrow">
+            <ArrowForwardIosIcon style={{fontSize: "18px", color: "black"}}/>
+          </div>
+
+        <p className='noItemsTag'>No items to display.</p>
       </div>
     );
+  }
+
+  const urlLink = () => {
+    let link = ``;
+    
+    if(header.toLowerCase() === "posters"){
+      link = `/${username}/posters`;
+    } else {
+      link = `/${username}/digital-planners`;
+    }
+
+    return link;
   }
 
   function getDeviceType() {
@@ -71,7 +88,7 @@ const ItemCarousel = ({ url, header }) => {
 
   return (
     <div className='itemCarousel'>
-        <Link className="header" to="/">
+        <Link className="header" to={urlLink()}>
           <h1>{header}</h1>
 
           <div className="arrow">

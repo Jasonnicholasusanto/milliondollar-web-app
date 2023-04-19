@@ -7,12 +7,7 @@ import { useParams } from 'react-router-dom';
 const Homepage = () => {
 
   const { username } = useParams();
-
   const { data, loading, error } = useFetchUsers(`/users?populate=*&filters[username][$eq]=${username}`);
-
-  const [firstName, setFirstName] = useState('Jason');
-  const [lastName, setLastName] = useState('Susanto');
-  const [description, setDescription] = useState('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae tenetur blanditiis ipsum nesciunt esse, necessitatibus maxime quas quod praesentium laboriosam soluta repellendus vel, fuga tempora, porro dolor! Unde, quod velit!')
 
   if (loading) {
     return <div>Loading...</div>;
@@ -43,7 +38,7 @@ const Homepage = () => {
           </h3>
 
           <p className="description">
-            {data?.description}
+            {data?.description !== null ? data?.description : "No description here."}
           </p>
         </div>
 
@@ -51,9 +46,9 @@ const Homepage = () => {
 
       <div className="carousels">
 
-          <ItemCarousel className='postersCarousel' header={"Posters"} url={'/posters?populate=*'}/>
+          <ItemCarousel className='postersCarousel' username={data?.username} header={"Posters"} url={`/posters?populate=*&[filters][user][id]=${data?.id}`}/>
 
-          <ItemCarousel className='digitalPlannersCarousel' header={"Digital Planners"} url={'/digital-planners?populate=*'}/>
+          <ItemCarousel className='digitalPlannersCarousel' username={data?.username} header={"Digital Planners"} url={`/digital-planners?populate=*&[filters][user][id]=${data?.id}`}/>
 
       </div>
 

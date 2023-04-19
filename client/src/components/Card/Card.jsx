@@ -29,7 +29,7 @@ const Card = ({ item }) => {
     return avg;
 
   }
-
+  
   return (
     <NavLink className="link" to={`/poster/${item.id}`}>
         <div className="card">
@@ -43,7 +43,9 @@ const Card = ({ item }) => {
 
 
 
-            {item?.attributes.branding === "" ? <h3>By {item?.attributes.artist}</h3> : <h3>By {item?.attributes.branding}</h3>}
+            {/* {item?.attributes.branding === "" ? <h3>By {item?.attributes.artist}</h3> : <h3>By {item?.attributes?.user?.data?.attributes?.username}</h3>} */}
+
+            <h3>By {item?.attributes?.user?.data?.attributes?.username}</h3>
 
             <div className="rating">
                 <span className="star">
