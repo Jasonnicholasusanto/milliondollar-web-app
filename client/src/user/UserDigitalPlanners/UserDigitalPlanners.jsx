@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Contact from '../../components/Contact/Contact';
 import "./UserDigitalPlanners.scss";
 import useFetchUsers from '../../hooks/useFetchUsers';
-import UserList from '../../components/UserList/UserList';
+import UserDPList from '../../components/UserDPList/UserDPList';
 
 const UserDigitalPlanners = () => {
 
@@ -79,7 +79,7 @@ const UserDigitalPlanners = () => {
 
           <h1>{data?.username}'s Digital Planners</h1>
 
-          <UserList userData={data} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} />
+          <UserDPList userData={data} maxPrice={maxPrice} sort={sort} subCats={selectedSubCats} />
         </div>
       </div>
 
