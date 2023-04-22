@@ -2,7 +2,25 @@ import React, { useState, useEffect, fetchUserData } from 'react';
 import './Homepage.scss';
 import useFetchUsers from '../../hooks/useFetchUsers';
 import ItemCarousel from '../../components/ItemCarousel/ItemCarousel';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import Dropzone from "react-dropzone";
+
+const handleDrop = async (acceptedFiles) => {
+  const formData = new FormData();
+  formData.append('file', acceptedFiles[0]);
+  
+  try {
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await response.json();
+    
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 const Homepage = () => {
 
@@ -22,11 +40,28 @@ const Homepage = () => {
 
       <div className="profile">
 
-        <div class="profile-header">
-          {data?.coverImg !== null 
-            ? <img class="cover-image" src={process.env.REACT_APP_UPLOAD_URL + data?.coverImg?.url} alt="Cover Image"/>
-            : <img class="cover-image" src="/img/cover-image-default.png"/>}
-          <img class="profile-image" src={process.env.REACT_APP_UPLOAD_URL + data?.profileImg?.url} alt="Profile Image"/>
+        <div className="profile-header">
+          <Dropzone onDrop={handleDrop}>
+            {({ getRootProps, getInputProps }) => (
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                {data?.coverImg !== null 
+                  ? <img className="cover-image" src={process.env.REACT_APP_UPLOAD_URL + data?.coverImg?.url} alt="Cover Image"/>
+                  : <img className="cover-image" src="/img/cover-image-default.png"/>}
+              </div>
+            )}
+          </Dropzone>
+          
+          <Dropzone onDrop={handleDrop}>
+            {({ getRootProps, getInputProps }) => (
+                <div {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  {data?.profileImg !== null 
+                    ? <img className="profile-image" src={process.env.REACT_APP_UPLOAD_URL + data?.profileImg?.url} alt="Profile Image"/>
+                    : <img className="profile-image" src="/img/profile-user.png"/>}
+                </div>
+            )}
+          </Dropzone>
         </div>
 
         <div className="profileInfo">
@@ -40,6 +75,21 @@ const Homepage = () => {
           <p className="description">
             {data?.description !== null ? data?.description : "No description here."}
           </p>
+
+          <div className="buttons">
+            <Link className="link" to={`/dashboard/${username}/profile`}>
+              <button className="btn">Edit Profile Information</button>
+            </Link>&nbsp;&nbsp;
+            
+            <Link className="link" to="/">
+              <button className="btn">Edit Posters</button>
+            </Link>&nbsp;&nbsp;
+
+            <Link className="link" to="/">
+              <button className="btn">Sell Posters</button>
+            </Link>&nbsp;&nbsp;
+          </div>
+          
         </div>
 
       </div>

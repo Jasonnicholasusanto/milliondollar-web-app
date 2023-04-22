@@ -25,6 +25,7 @@ import Homepage from "./user/Homepage/Homepage";
 import Dashboard from "./user/Dashboard/Dashboard";
 import UserPosters from "./user/UserPosters/UserPosters";
 import UserDigitalPlanners from "./user/UserDigitalPlanners/UserDigitalPlanners";
+import ProfileEdit from "./user/ProfileEdit/ProfileEdit";
 
 // Customizing the layout of the web page: Navigation bar and Footer stays the same
 // in all pages. However, we utilize Outlet from react-router-dom to change the web pages'
@@ -160,6 +161,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/:username",
         element: <Homepage/>
+      },
+      {
+        path: "/dashboard/:username/profile",
+        element: <ProfileEdit/>
       },
       {
         // path: "/sell-poster/"

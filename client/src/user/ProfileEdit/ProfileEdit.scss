@@ -1,0 +1,78 @@
+// @import "~@mui/material/styles";
+
+// $profile-picture-width: 200px;
+// $profile-picture-height: 200px;
+
+// $cover-image-width: 800px;
+// $cover-image-height: 200px;
+
+// .ProfilePicture {
+//   width: $profile-picture-width;
+//   height: $profile-picture-height;
+//   margin: auto;
+//   margin-bottom: theme.spacing(2);
+// }
+
+// .CoverImage {
+//   width: $cover-image-width;
+//   height: $cover-image-height;
+//   // background-color: theme.palette.primary.main;
+//   margin: auto;
+//   margin-bottom: theme.spacing(2);
+// }
+
+// .ProfileEdit {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100%;
+//   width: 100%;
+//   padding-top: theme.spacing(2);
+  
+//   .MuiGrid-spacing-xs-2 {
+//     width: 100%;
+//   }
+  
+//   .MuiBox-root {
+//     text-align: center;
+//     margin-bottom: theme.spacing(4);
+//   }
+  
+//   .MuiTypography-h4 {
+//     font-size: 2.5rem;
+//     font-weight: 500;
+//   }
+  
+//   .MuiTextField-root {
+//     margin-bottom: theme.spacing(2);
+//   }
+  
+//   .MuiButton-root {
+//     margin-top: theme.spacing(2);
+//   }
+  
+//   .ProfileInfo {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+    
+//     .MuiGrid-spacing-xs-2 {
+//       width: 100%;
+//     }
+    
+//     .MuiTextField-root {
+//       margin-bottom: theme.spacing(2);
+//     }
+    
+//     .MuiButton-root {
+//       margin-top: theme.spacing(2);
+//     }
+//   }
+// }
+
+.profile-header{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
